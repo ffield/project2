@@ -4,6 +4,7 @@ import { spotifyModule } from './services/spotify.module';
 import {RouterModule,Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 const routes:Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -12,7 +13,8 @@ const routes:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule, spotifyModule,RouterModule.forRoot(routes)
