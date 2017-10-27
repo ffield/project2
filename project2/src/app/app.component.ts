@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {spotify} from './services/spotify.service';
+import {Spotify} from './services/spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import {spotify} from './services/spotify.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private _apiSvc: spotify) {
-    //_apiSvc.getPlaylists(1);
-    //_apiSvc.getNewReleases(1);
+  constructor(private _apiSvc: Spotify) {
+    _apiSvc.getPlaylists(1);
+    _apiSvc.getNewReleases(1);
   }
     ngOnInit() {
       console.log('yo');

@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class spotify {
+export class Spotify {
     baseUri: string;
     limit = 100;
     private headers = new Headers({
@@ -13,22 +13,24 @@ export class spotify {
         this.baseUri = baseAPIUri;
     }
 
-getPlaylists = (page: number) => {
-    this.http.get(
-    this.baseUri + '/v1/browse/featured-playlists',
-    {   headers: this.headers }).map(x => {
-        console.log(x.json());
-        return x.json();
-        })
-    }
+    getPlaylists = (page: number) => {
+        console.log('Getting playlists');
+        const res = this.http.get(
+        this.baseUri + '/v1/browse/featured-playlists',
+        {   headers: this.headers }).map(x => {
+            console.log(x.json());
+            return x.json();
+            });
+        console.log(res);
+        }
 
 
-getNewReleases = (page: number) => {
-    this.http.get(
-    this.baseUri + '/v1/browse/new-releases',
-    {   headers: this.headers }).map(x => {
-        console.log(x.json());
-        return x.json();
-        })
-    }
-} 
+    getNewReleases = (page: number) => {
+        this.http.get(
+        this.baseUri + '/v1/browse/new-releases',
+        {   headers: this.headers }).map(x => {
+            console.log(x.json());
+            return x.json();
+            });
+        }
+}
