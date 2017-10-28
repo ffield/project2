@@ -13,7 +13,7 @@ export class AppComponent {
     _apiSvc.getPlaylists(1);
     _apiSvc.getNewReleases(1);
   }
-    ngOnInit() {
+    /*ngOnInit() {
       console.log('yo');
-    }
+    }*/
 }

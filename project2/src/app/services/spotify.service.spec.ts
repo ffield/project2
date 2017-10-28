@@ -1,14 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { SpotifyService } from './spotify.service';
+import { Spotify } from './spotify.service';
 
 describe('SpotifyService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [SpotifyService]
+            providers: [Spotify]
         });
     });
 
-    it('should be created', inject([SpotifyService], (service: SpotifyService) => {
+    it('should be created', inject([Spotify], (service: Spotify) => {
         expect(service).toBeTruthy();
     }));
 });
