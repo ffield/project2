@@ -16,7 +16,7 @@ export class Spotify {
     }
 
     getPicture = () => {
-        return this.http.get("https://opentdb.com/api.php?amount=10&category=9&type=boolean").map( x =>  console.log(x.json()));
+        return this.http.get("https://opentdb.com/api.php?amount=10&category=9&type=boolean").map( x =>  x.json());
     }
 }
 
