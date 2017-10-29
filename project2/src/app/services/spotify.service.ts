@@ -5,25 +5,24 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Spotify {
     baseUri: string;
-    limit = 100;
+
+    apiKey: string = "AIzaSyDqYfPwNQ-l19LCLXqz_K1fL-cgHQpuP_4";
+    url:string;
+    questions: any;
     private headers = new Headers({
         'Content-Type': 'application/json'
     });
     constructor(private http: Http, baseAPIUri: string) {
-        this.baseUri = baseAPIUri;
     }
 
-    getPlaylists = (page: number) => this.http.get(
-        this.baseUri + '/v1/browse/featured-playlists',
-        {   headers: this.headers }).map(x => {
-            console.log(x.json());
-            return x.json();
-            })
-
-    getNewReleases = (page: number) => this.http.get(
-        this.baseUri + '/v1/browse/new-releases',
-        {   headers: this.headers }).map(x => {
-            console.log(x.json());
-            return x.json();
-            })
+    getPicture = () => {
+        return this.http.get("https://opentdb.com/api.php?amount=10&category=9&type=boolean").map( x =>  console.log(x.json()));
+    }
 }
+
+
+// this.http.get(this.commentsUrl)
+//                         // ...and calling .json() on the response to return data
+//                          .map((res:Response) => res.json())
+//                          //...errors if any
+//                          .catch((error:any) => Observable.throw(error.json().error || 'Server error'));

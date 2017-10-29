@@ -1,3 +1,22 @@
 <p>
   playlist works!
 </p>
+
+<div class = "results-box">
+<div *ngIf="showResults; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+<div>
+
+<ul>
+  <li *ngFor="let item of results">
+    <div>{{item.question}}</div>
+    <div>Correct Answer: {{item.correct_answer }} </div>
+  </li>
+</ul>
+	
+
+</div>
+</ng-template>
+<ng-template #elseBlock>
+<div>false</div>
+</ng-template>

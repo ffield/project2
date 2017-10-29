@@ -10,10 +10,6 @@ export class AppComponent {
   title = 'app';
 
   constructor(private _apiSvc: Spotify) {
-    _apiSvc.getPlaylists(1);
-    _apiSvc.getNewReleases(1);
   }
-    /*ngOnInit() {
-      console.log('yo');
-    }*/
+
 }
