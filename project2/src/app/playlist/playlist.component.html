@@ -1,22 +1,18 @@
-<p>
-  playlist works!
-</p>
-
 <div class = "results-box">
 <div *ngIf="showResults; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
 <div>
+  <h3> Score</h3>
+<div id = "score"> {{score}} </div> 
+  
+<h2>{{question}}</h2>
+    
 
-<ul>
-  <li *ngFor="let item of results">
-    <div>{{item.question}}</div>
-    <div>Correct Answer: {{item.correct_answer }} </div>
-  </li>
-</ul>
 	
-
+<button (click) = subTrue()>True</button>
+<button (click) = subFalse()>False</button>
 </div>
 </ng-template>
 <ng-template #elseBlock>
-<div>false</div>
+<div>Loading . . .</div>
 </ng-template>

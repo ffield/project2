@@ -10,7 +10,12 @@ export class PlaylistComponent {
   artists: any[] = [ ];
   attributes: any[] = [ ];
   results: any[] = [ ];
+  question: string;
+  answer: boolean;
   showResults : boolean = false;
+  score : number = 0;
+  count : number = 1;
+
   constructor(private _apiSvc: Spotify) {}
 
   ngOnInit() {
@@ -21,13 +26,46 @@ export class PlaylistComponent {
 
   setResults = (json:any) => {
     this.results = json.results;
+    this.question = this.results[0].question;
+    this.answer = this.results[0].correct_answer;
     console.log(this.results);
     this.showFetchedResults();
+    
+    this.count = 1;
   }
 
 
   showFetchedResults = () => {
     this.showResults = true;
+  }
+
+  advanceQuestion(){
+    if(this.count < 10){
+      this.question = this.results[this.count].question;
+      this.answer = this.results[this.count].correct_answer;
+      this.count = this.count + 1;
+      console.log(this.question);
+      console.log(this.answer);
+      console.log(this.score);
+    }
+    
+
+  }
+
+  subFalse(){
+    console.log("first");
+    if(this.answer == false){
+      this.score = this.score + 1;
+      console.log("second");
+    }
+    this.advanceQuestion();
+  }
+
+  subTrue(){
+    if(this.answer == true){
+      this.score = this.score + 1;
+    }
+    this.advanceQuestion();
   }
 
 
