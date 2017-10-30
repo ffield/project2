@@ -47,6 +47,10 @@ export class PlaylistComponent {
       console.log(this.question);
       console.log(this.answer);
       console.log(this.score);
+      var re = /&#039;/gi;
+     this.question = this.question.replace(re, "\'");
+      var re = /&quot;/gi;
+      this.question = this.question.replace(re, '\"');
     }
     
 
