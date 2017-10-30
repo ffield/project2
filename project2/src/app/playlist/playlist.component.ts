@@ -34,6 +34,8 @@ export class PlaylistComponent {
     this.question = this.question.replace(re, "\'");
      var re = /&quot;/gi;
      this.question = this.question.replace(re, '\"');
+     var re = /&Aring;/gi;
+     this.question = this.question.replace(re, '\å');
     this.count = 1;
   }
 
@@ -54,6 +56,8 @@ export class PlaylistComponent {
      this.question = this.question.replace(re, "\'");
       var re = /&quot;/gi;
       this.question = this.question.replace(re, '\"');
+      var re = /&Aring;/gi;
+      this.question = this.question.replace(re, '\å');
     }
     
 
