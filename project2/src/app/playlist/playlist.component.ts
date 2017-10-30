@@ -54,7 +54,7 @@ export class PlaylistComponent {
 
   subFalse(){
     console.log("first");
-    if(this.answer == false){
+    if(!this.answer){
       this.score = this.score + 1;
       console.log("second");
     }
@@ -62,7 +62,7 @@ export class PlaylistComponent {
   }
 
   subTrue(){
-    if(this.answer == true){
+    if(this.answer){
       this.score = this.score + 1;
     }
     this.advanceQuestion();
