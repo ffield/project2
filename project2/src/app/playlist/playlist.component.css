@@ -1,3 +1,8 @@
 body { 
     padding-top: 65px; 
 }
+
+.container {
+	width: 80%;
+	margin-left:60px;
+}
