@@ -11,7 +11,7 @@ export class PlaylistComponent {
   attributes: any[] = [ ];
   results: any[] = [ ];
   question: string;
-  answer: boolean;
+  answer: any;
   showResults : boolean = false;
   score : number = 0;
   count : number = 1;
@@ -53,16 +53,18 @@ export class PlaylistComponent {
   }
 
   subFalse(){
-    console.log("first");
-    if(!this.answer){
+    
+    
+    if(this.answer == "False" && this.count<10){
       this.score = this.score + 1;
-      console.log("second");
+      
     }
     this.advanceQuestion();
   }
-
+  
   subTrue(){
-    if(this.answer){
+    
+    if(this.answer == "True" && this.count<10){
       this.score = this.score + 1;
     }
     this.advanceQuestion();
