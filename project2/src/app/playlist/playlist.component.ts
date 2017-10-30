@@ -30,7 +30,10 @@ export class PlaylistComponent {
     this.answer = this.results[0].correct_answer;
     console.log(this.results);
     this.showFetchedResults();
-    
+    var re = /&#039;/gi;
+    this.question = this.question.replace(re, "\'");
+     var re = /&quot;/gi;
+     this.question = this.question.replace(re, '\"');
     this.count = 1;
   }
 
