@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import { ModalModule } from 'ng2-modal-dialog/modal.module';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -21,7 +22,7 @@ const routes: Routes = [
     AboutComponent
   ],
   imports: [
-    BrowserModule, SpotifyModule, RouterModule.forRoot(routes)
+    BrowserModule, SpotifyModule, RouterModule.forRoot(routes), ModalModule
   ],
   exports: [RouterModule],
   providers: [],

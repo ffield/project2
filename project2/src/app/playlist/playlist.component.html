@@ -18,3 +18,14 @@
 <ng-template #elseBlock>
 <div>Loading . . .</div>
 </ng-template>
+
+<button type="button" [hidden]="true" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+    </div>
+  </div>
+</div>

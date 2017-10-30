@@ -24,7 +24,7 @@ export class PlaylistComponent {
         });
   }
 
-  setResults = (json:any) => {
+  setResults = (json: any) => {
     this.results = json.results;
     this.question = this.results[0].question;
     this.answer = this.results[0].correct_answer;
@@ -44,8 +44,8 @@ export class PlaylistComponent {
     this.showResults = true;
   }
 
-  advanceQuestion(){
-    if(this.count < 10){
+  advanceQuestion() {
+    if (this.count < 10) {
       this.question = this.results[this.count].question;
       this.answer = this.results[this.count].correct_answer;
       this.count = this.count + 1;
@@ -53,20 +53,22 @@ export class PlaylistComponent {
       console.log(this.answer);
       console.log(this.score);
       var re = /&#039;/gi;
-     this.question = this.question.replace(re, "\'");
+      this.question = this.question.replace(re, "\'");
       var re = /&quot;/gi;
       this.question = this.question.replace(re, '\"');
       var re = /&Aring;/gi;
       this.question = this.question.replace(re, '\å');
+    }else {
+      alert('your score is ' + this.score);
+      window.location.reload();
     }
-    
 
   }
 
   subFalse(){
     
     
-    if(this.answer == "False" && this.count<10){
+    if(this.answer == "False" && this.count <= 10) {
       this.score = this.score + 1;
       
     }
@@ -75,7 +77,7 @@ export class PlaylistComponent {
   
   subTrue(){
     
-    if(this.answer == "True" && this.count<10){
+    if(this.answer == "True" && this.count <= 10){
       this.score = this.score + 1;
     }
     this.advanceQuestion();
